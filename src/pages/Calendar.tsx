@@ -28,31 +28,32 @@ const dinners = [
 const CalendarPage = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
-  // Find dinners for the selected date
   const selectedDayDinners = dinners.filter(dinner => 
     date && dinner.date.toDateString() === date.toDateString()
   );
 
   return (
-    <div className="p-6 space-y-6">
-      <div className="space-y-1">
-        <h1 className="font-serif text-3xl font-bold tracking-tight">Calendar</h1>
-        <p className="text-muted-foreground">
-          View and manage your dinner schedule.
-        </p>
+    <div className="h-[calc(100vh-4rem)] p-4 flex flex-col">
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h1 className="font-serif text-3xl font-bold tracking-tight">Calendar</h1>
+          <p className="text-muted-foreground">
+            View and manage your dinner schedule.
+          </p>
+        </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-7">
-        <Card className="md:col-span-5">
-          <CardHeader>
-            <CardTitle>Dinner Calendar</CardTitle>
+      <div className="flex-1 grid grid-cols-1 gap-4 lg:grid-cols-[1fr_300px] overflow-hidden">
+        <Card className="flex-1">
+          <CardHeader className="border-b p-3">
+            <CardTitle className="text-base font-medium">Dinner Calendar</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-0">
             <Calendar
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="pointer-events-auto"
+              className="w-full rounded-none border-0"
               modifiers={{
                 dinner: dinners.map(dinner => dinner.date)
               }}
@@ -62,11 +63,18 @@ const CalendarPage = () => {
                   color: 'var(--primary)',
                 }
               }}
+              styles={{
+                months: { width: '100%' },
+                month: { width: '100%' },
+                table: { width: '100%' },
+                head_cell: { width: '14.28%' },
+                cell: { width: '14.28%' }
+              }}
             />
           </CardContent>
         </Card>
 
-        <Card className="md:col-span-2">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               {date ? date.toLocaleDateString('en-US', { 
