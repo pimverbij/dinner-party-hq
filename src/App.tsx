@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -13,6 +12,7 @@ import Locations from "./pages/Locations";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
+import CalendarPage from "./pages/CalendarPage";
 
 const queryClient = new QueryClient();
 
@@ -40,7 +40,7 @@ const App = () => {
                   <Route path="/dinners" element={<Dinners />} />
                   <Route path="/recipes" element={<Recipes />} />
                   <Route path="/locations" element={<Locations />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="/calendar" element={<CalendarPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>
