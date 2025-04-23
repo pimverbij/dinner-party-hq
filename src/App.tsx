@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -13,7 +12,8 @@ import Locations from "./pages/Locations";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
-import Calendar from "./pages/Calendar"; // Changed import to match the actual filename
+import Calendar from "./pages/Calendar";
+import RecipePage from "./pages/RecipePage";
 
 const queryClient = new QueryClient();
 
@@ -40,8 +40,9 @@ const App = () => {
                   <Route path="/friends" element={<Friends />} />
                   <Route path="/dinners" element={<Dinners />} />
                   <Route path="/recipes" element={<Recipes />} />
+                  <Route path="/recipes/:id" element={<RecipePage />} />
                   <Route path="/locations" element={<Locations />} />
-                  <Route path="/calendar" element={<Calendar />} /> {/* Updated to match the import */}
+                  <Route path="/calendar" element={<Calendar />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>

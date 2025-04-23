@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Clock, Utensils } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface RecipeCardProps {
   recipe: {
@@ -57,7 +57,9 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
         )}
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full">View Recipe</Button>
+        <Button asChild className="w-full">
+          <Link to={`/recipes/${recipe.id}`}>View Recipe</Link>
+        </Button>
       </CardFooter>
     </Card>
   );
