@@ -4,6 +4,7 @@ import DashboardStats from '@/components/dashboard/DashboardStats';
 import UpcomingDinners from '@/components/dashboard/UpcomingDinners';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import RecipeCard from '@/components/recipes/RecipeCard';
+import { Utensils } from 'lucide-react';
 
 const recipes = [
   {
