@@ -15,6 +15,7 @@ import Sidebar from "./components/layout/Sidebar";
 import Calendar from "./pages/Calendar";
 import RecipePage from "./pages/RecipePage";
 import DinnerPage from "./pages/DinnerPage";
+import FriendPage from "./pages/FriendPage";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => {
                   <Route path="/locations" element={<Locations />} />
                   <Route path="/calendar" element={<Calendar />} />
                   <Route path="/dinners/:id" element={<DinnerPage />} />
+                  <Route path="/friends/:id" element={<FriendPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>
