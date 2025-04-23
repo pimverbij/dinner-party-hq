@@ -14,6 +14,7 @@ import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
 import Calendar from "./pages/Calendar";
 import RecipePage from "./pages/RecipePage";
+import DinnerPage from "./pages/DinnerPage";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => {
                   <Route path="/recipes/:id" element={<RecipePage />} />
                   <Route path="/locations" element={<Locations />} />
                   <Route path="/calendar" element={<Calendar />} />
+                  <Route path="/dinners/:id" element={<DinnerPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>
